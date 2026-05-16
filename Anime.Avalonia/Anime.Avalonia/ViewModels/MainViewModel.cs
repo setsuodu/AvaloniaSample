@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.Generic;
+using Anime.Avalonia.Models;
 
 namespace Anime.Avalonia.ViewModels;
 
@@ -20,8 +21,9 @@ public partial class MainViewModel : ViewModelBase
 
     public bool CanGoBack => _history.Count > 0;
 
-    public void GoToDetail(Models.Item item)
+    public void GoToDetail(AnimeModel item)
     {
+        System.Diagnostics.Debug.WriteLine($"🔍 点击了: {item.Title}");
         _history.Push(CurrentPage!);
         IsTransitionReversed = false;     // 前进：右→左
         CurrentPage = new DetailViewModel(this, item);

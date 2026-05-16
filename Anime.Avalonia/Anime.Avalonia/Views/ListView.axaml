@@ -3,16 +3,66 @@
              xmlns:vm="clr-namespace:Anime.Avalonia.ViewModels"
              x:Class="Anime.Avalonia.Views.ListView"
              x:DataType="vm:ListViewModel">
-	<DockPanel>
-		<TextBlock DockPanel.Dock="Top" Text="我的列表" FontSize="20" Margin="15" FontWeight="Bold"/>
-		<ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}">
+
+	<StackPanel Margin="12">
+
+		<!-- 标题 -->
+		<TextBlock Text="我的列表"
+                   FontSize="26"
+                   FontWeight="Bold"
+                   Margin="0 0 0 16"/>
+
+		<!-- 搜索栏 + 按钮 -->
+		<StackPanel Orientation="Horizontal"
+                    Spacing="8"
+                    Margin="0 0 0 12">
+
+			<TextBox Text="{Binding SearchText}"
+                     Watermark="搜索番剧..."
+                     Width="320"
+                     Height="36" />
+
+			<Button Content="🔍 搜索"
+                    Command="{Binding SearchCommand}"
+                    Height="36" />
+
+			<!-- 新增：刷新按钮（直接调用加载命令） -->
+			<Button Content="🔄 刷新"
+                    Command="{Binding LoadAnimesCommand}"
+                    Height="36" />
+		</StackPanel>
+
+		<!-- 加载中 + 状态文字 -->
+		<StackPanel Margin="0 0 0 12" Spacing="6">
+			<ProgressBar IsVisible="{Binding IsLoading}"
+                         IsIndeterminate="True"
+                         Height="4" />
+
+			<TextBlock Text="{Binding Status}"
+                       FontSize="14"
+                       Foreground="{DynamicResource SystemAccentColor}" />
+		</StackPanel>
+
+		<!-- 真实动漫列表（已绑定 Animes） -->
+		<ListBox ItemsSource="{Binding Animes}"
+                 SelectedItem="{Binding SelectedItem}">
+
 			<ListBox.ItemTemplate>
 				<DataTemplate>
-					<Border Margin="5" Padding="15" CornerRadius="8" Background="{DynamicResource SystemAccentColorLight3}">
-						<TextBlock Text="{Binding Title}" FontSize="16" VerticalAlignment="Center"/>
+					<Border Margin="4,6"
+                            Padding="16,12"
+                            CornerRadius="10"
+                            Background="{DynamicResource SystemAccentColorLight3}">
+
+						<TextBlock Text="{Binding Title}"
+                                   FontSize="18"
+                                   FontWeight="SemiBold"
+                                   VerticalAlignment="Center" />
+
+						<!-- 以后可以继续加 Description、年份、海报等 -->
 					</Border>
 				</DataTemplate>
 			</ListBox.ItemTemplate>
 		</ListBox>
-	</DockPanel>
+	</StackPanel>
 </UserControl>
