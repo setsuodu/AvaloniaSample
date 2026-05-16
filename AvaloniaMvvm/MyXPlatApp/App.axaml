@@ -1,0 +1,20 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:MyXPlatApp"
+             x:Class="MyXPlatApp.App"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <FluentTheme />
+		<Style Selector="UserControl">
+			<Setter Property="RenderTransform">
+				<TranslateTransform X="0" Y="0"/>
+			</Setter>
+		</Style>
+    </Application.Styles>
+</Application>
