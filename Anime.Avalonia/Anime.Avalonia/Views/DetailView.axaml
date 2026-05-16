@@ -13,7 +13,7 @@
 				<StackPanel Spacing="10">
 					<TextBlock Text="{Binding Anime.Title}" FontSize="22" FontWeight="Bold"/>
 					<Separator Height="1" Background="#CCCCCC"/>
-					<TextBlock Text="{Binding Anime.Description}" FontSize="16" TextWrapping="Wrap"/>
+					<TextBlock Text="{Binding Anime.Id}" FontSize="16" TextWrapping="Wrap"/>
 				</StackPanel>
 			</Border>
 		</StackPanel>

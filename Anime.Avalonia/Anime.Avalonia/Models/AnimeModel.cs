@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Anime.Avalonia.Models;
+﻿namespace Anime.Avalonia.Models;
 
 public class AnimeModel
 {
