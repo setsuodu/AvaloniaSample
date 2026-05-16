@@ -1,0 +1,17 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Anime.Avalonia.ViewModels"
+             x:Class="Anime.Avalonia.Views.MainView"
+             x:DataType="vm:MainViewModel">
+
+	<TransitioningContentControl
+        Name="ContentHost"
+        Content="{Binding CurrentPage}"
+        IsTransitionReversed="{Binding IsTransitionReversed}">
+		<!-- 必须加这行 -->
+
+		<TransitioningContentControl.PageTransition>
+			<PageSlide Duration="00:00:00.35" Orientation="Horizontal" />
+		</TransitioningContentControl.PageTransition>
+	</TransitioningContentControl>
+</UserControl>

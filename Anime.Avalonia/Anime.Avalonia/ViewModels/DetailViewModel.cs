@@ -1,7 +1,7 @@
-﻿using Avalonia12.Models;
+﻿using Anime.Avalonia.Models;
 using CommunityToolkit.Mvvm.Input;
 
-namespace Avalonia12.ViewModels;
+namespace Anime.Avalonia.ViewModels;
 
 public partial class DetailViewModel : ViewModelBase
 {
