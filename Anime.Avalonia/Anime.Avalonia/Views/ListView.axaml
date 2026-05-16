@@ -4,45 +4,64 @@
              x:Class="Anime.Avalonia.Views.ListView"
              x:DataType="vm:ListViewModel">
 
-	<Grid RowDefinitions="Auto, *">
+	<Grid RowDefinitions="Auto, Auto, *" Margin="12">
 
-		<StackPanel Grid.Row="0" Margin="12 12 12 4">
-			<TextBlock Text="我的列表"
-                       FontSize="26"
-                       FontWeight="Bold"/>
+		<TextBlock Grid.Row="0"
+                   Text="我的列表"
+                   FontSize="26"
+                   FontWeight="Bold"
+                   Margin="0 0 0 12"/>
+
+		<StackPanel Grid.Row="1" Margin="0 0 0 12">
 			<TextBlock Text="{Binding Status}"
-                       FontSize="12"
-                       Foreground="Gray"
-                       Margin="0,4,0,12"/>
+                       FontSize="14"
+                       Foreground="#007ACC"
+                       Margin="0 4 0 0"/>
 		</StackPanel>
 
-		<ScrollViewer Grid.Row="1">
+		<ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+
 			<ItemsControl ItemsSource="{Binding Animes}">
 				<ItemsControl.ItemsPanel>
 					<ItemsPanelTemplate>
 						<UniformGrid Columns="2"
-                                     Margin="6"
                                      HorizontalAlignment="Stretch"/>
 					</ItemsPanelTemplate>
 				</ItemsControl.ItemsPanel>
 
 				<ItemsControl.ItemTemplate>
 					<DataTemplate>
-						<Border Margin="6" Padding="16" CornerRadius="12"
+						<Border Margin="6"
+                                Width="172"
+                                Height="258"
+                                CornerRadius="12"
                                 Background="{DynamicResource SystemAccentColorLight3}"
                                 PointerPressed="OnItemPointerPressed"
                                 ClipToBounds="True">
-							<TextBlock Text="{Binding Title}"
-                                       FontSize="16"
-                                       FontWeight="SemiBold"
-                                       TextWrapping="Wrap"
-                                       VerticalAlignment="Center"
-                                       HorizontalAlignment="Center"/>
+
+							<Grid RowDefinitions="*, Auto" Margin="12">
+
+								<Panel Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+									<PathIcon Data="{StaticResource ImageRegular}" Opacity="0.15" Width="36" Height="36"/>
+								</Panel>
+
+								<TextBlock Grid.Row="1"
+                                           Text="{Binding Title}"
+                                           FontSize="14"
+                                           FontWeight="SemiBold"
+                                           TextWrapping="Wrap"
+                                           MaxLines="2"
+                                           TextTrimming="CharacterEllipsis"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           TextAlignment="Center"
+                                           Margin="0,8,0,0"/>
+							</Grid>
 						</Border>
 					</DataTemplate>
 				</ItemsControl.ItemTemplate>
 			</ItemsControl>
-		</ScrollViewer>
 
+		</ScrollViewer>
 	</Grid>
 </UserControl>
