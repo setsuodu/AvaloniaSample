@@ -22,7 +22,24 @@ public partial class ListViewModel : ViewModelBase
         {
             new Item(".NET 10 特性一览", "这里是 A 的详情内容"),
             new Item("Avalonia 11 技巧", "这里是 B 的详情内容"),
-            new Item("跨平台 UI 指南", "这里是 C 的详情内容")
+            new Item("跨平台 UI 指南", "这里是 C 的详情内容"),
+            new Item("跨平台 UI 指南", "这里是 D 的详情内容"),
+            new Item("跨平台 UI 指南", "这里是 E 的详情内容"),
+            new Item("跨平台 UI 指南", "这里是 F 的详情内容"),
+            new Item("跨平台 UI 指南", "这里是 G 的详情内容"),
+            new Item("跨平台 UI 指南", "这里是 H 的详情内容"),
+            new Item("跨平台 UI 指南", "这里是 I 的详情内容"),
+            new Item("跨平台 UI 指南", "这里是 J 的详情内容"),
+            new Item("跨平台 UI 指南", "这里是 K 的详情内容"),
+            new Item("跨平台 UI 指南", "这里是 L 的详情内容"),
+            new Item("跨平台 UI 指南", "这里是 M 的详情内容"),
+            new Item("跨平台 UI 指南", "这里是 N 的详情内容"),
+            new Item("跨平台 UI 指南", "这里是 O 的详情内容"),
+            new Item("跨平台 UI 指南", "这里是 P 的详情内容"),
+            new Item("跨平台 UI 指南", "这里是 Q 的详情内容"),
+            new Item("跨平台 UI 指南", "这里是 R 的详情内容"),
+            new Item("跨平台 UI 指南", "这里是 S 的详情内容"),
+            new Item("跨平台 UI 指南", "这里是 T 的详情内容")
         };
     }
 

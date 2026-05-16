@@ -88,7 +88,7 @@ public partial class ListViewModel : ViewModelBase
     {
         if (value != null)
         {
-            Console.WriteLine($">>> [LOG] 点击了: {value.Title}");
+            System.Diagnostics.Debug.WriteLine($">>> [LOG] 点击了: {value.Title}");
             _mainVm.GoToDetail(value);
             SelectedItem = null;   // 必须置空
         }

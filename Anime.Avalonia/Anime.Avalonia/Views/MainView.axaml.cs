@@ -24,7 +24,7 @@ public partial class MainView : UserControl
             {
                 if (DataContext is MainViewModel mainVm && mainVm.CanGoBack)
                 {
-                    Console.WriteLine(">>> [EVENT] 物理返回键触发");
+                    System.Diagnostics.Debug.WriteLine(">>> [EVENT] 物理返回键触发");
                     mainVm.GoBack();
                     args.Handled = true;
                 }
